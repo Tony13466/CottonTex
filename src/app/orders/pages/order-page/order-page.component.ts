@@ -48,6 +48,15 @@ export class OrderPageComponent implements OnInit {
     this.ordersService.getOrder(url[2]).subscribe( //y ese url 2 ??
       (order: any) => {
         console.log(order);
+
+         // asi diferencias mas rapido en que pantalla estas xd, cambialo con f1 peacock o algo asi xd era necesario? :v no pero esta mejor :v no quieres hacer el proyecto mejor? :v
+        // otra cosa, mas legible xd
+
+        // si te creas una cuenta de github students con tu correo universitario o validas tus datos con tu carnet, te dan gratis el github copilot, ese programa por ti xd pa que es, osea si yo tengo una funcion que declare sumarNotas(): { mientras voy escribiendo, te va dando sugerencias que solo presionando tab te completa toda la funcion xd, sirve bastante porque se sabe el uso de la mayoria de librerias que hay mmm y con una cuenta normal no te dan esa vaina?,  te cobran, metida de rata}
+
+        // si te das cuyenta en la consola es un array de 3 elementos, a ti te interesa el tercer elemento porque es tu id a consultar, hasta ahi bien? ya si y entras al url[2] porque el indice empieza en 0. SOlo hay 3 entonces? en este caso si, si tu ruta fuera mas grande tal vez asi: orders/orden/elemento/12376123 ahi si tienes mas elementos en el "url", solo te interesa el ultimo al final http://localhost:4200/orders/38671 ya entendi xd
+
+        // ahora, quita ese tema asqueroso :v
         this.order = order; // este es el objeto a ok
 
         // si te das cuenta en la consola tu back responde con un array de un solo elemento, por eso al asignarlo al this.order, entro en el indice 0, para hacer referencia al primer elemento del array
