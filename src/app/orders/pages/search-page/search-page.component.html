@@ -1,0 +1,32 @@
+<div class="flex flex-column">
+  <h3>Buscador</h3>
+
+  <mat-form-field>
+    <mat-label>Buscador de ordenes</mat-label>
+    <input
+      type="text"
+      matInput
+      [formControl]="searchInput"
+      (input)="searchOrder()"
+      [matAutocomplete]="auto"
+    />
+
+    <mat-autocomplete autoActiveFirstOption
+      #auto="matAutocomplete"
+      (optionSelected)="onSelectedOption( $event)">
+      <mat-option *ngFor="let order of orders" [value]="order">
+        {{ order.codigo_de_orden }}
+      </mat-option>
+    </mat-autocomplete>
+
+    <mat-option
+      *ngIf="orders.length === 0 && searchInput.value && searchInput.value.length > 0"
+      value=" ">
+      No se encontró nada con el término ingresado {{ searchInput.value }}
+    </mat-option>
+
+  </mat-form-field>
+
+  {{ selectedOrder | json}}
+
+</div>

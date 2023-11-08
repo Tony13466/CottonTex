@@ -1,0 +1,70 @@
+{
+  "users": [
+      {
+        "num_documento": 20514984299,
+        "user": "TEXTILDIAZ",
+        "email": "TEXTILDIAS@GMAIL.COM"
+      }
+  ],
+
+  "orders": [
+      {
+      "id": "38671",
+      "codigo_de_orden": "22-05809",
+      "ubicacion": "EMBOLSADO",
+      "cliente": "COMERCIAL TEXTIL COILL SRL",
+      "producto": "JERSEY FULL LYCRA 30/1 ALGODON + 30DN",
+      "proceso_actual": "COMPACTADO TUBULAR",
+      "color_elegido": "NEGRO 6421848",
+      "cantidad": 22.00,
+      "fecha_de_inicio": "2023-01-11 12:00:02.610",
+      "fecha_estimada_de_salida":	"2023-01-11 19:00:02.613",
+      "fecha_de_creacion": "1900-01-01 00:00:00.000"
+      },
+
+      {
+      "id": "39511",
+      "codigo_de_orden": "23-06449",
+      "ubicacion": "ENROLLADO",
+      "cliente": "COMERCIAL TEXTIL RECYTEX S.A.C.",
+      "producto": "JERSEY ESMERILADO 24/1 POLYCOTTON",
+      "proceso_actual": "ENROLLADO",
+      "color_elegido": "LAVADO 000014",
+      "cantidad":	482.90,
+      "fecha_de_inicio": "2023-03-18 12:05:15.033",
+      "fecha_estimada_de_salida":	"2023-03-18 14:46:51.477",
+      "fecha_de_creacion": "2023-02-07 11:32:49.173"
+      },
+
+      {
+      "id": "39512",
+      "codigo_de_orden":	"23-06450",
+      "ubicacion": "ENROLLADO",
+
+      "cliente": "COMERCIAL TEXTIL RECYTEX S.A.C.",
+      "producto": "JERSEY ESMERILADO 24/1 POLYCOTTON",
+
+      "proceso_actual": "ENROLLADO",
+      "color_elegido": "LAVADO 000014",
+      "cantidad": 453.45,
+      "fecha_de_inicio": "2023-02-07 17:01:08.307",
+      "fecha_estimada_de_salida": "2023-02-07 18:17:28.837",
+      "fecha_de_creacion": "2023-02-07 11:33:26.590"
+      },
+
+      {
+
+      "id": "39786",
+      "codigo_de_orden":	"23-06663",
+      "ubicacion": "EMBOLSADO",
+      "cliente": "TEXTILES ROGER SURCO E.I.R.L.",
+      "producto": "JERSEY 20/1 ALGODON",
+      "proceso_actual": "EMBOLSADO",
+      "color_elegido": "AZUL MARINO 4421746",
+      "cantidad":	302.40,
+      "fecha_de_inicio": "2023-05-27 12:00:26.000",
+      "fecha_estimada_de_salida":	"2023-05-27 23:03:42.000",
+      "fecha_de_creacion": "2023-02-21 08:50:27.287"
+      }
+  ]
+}

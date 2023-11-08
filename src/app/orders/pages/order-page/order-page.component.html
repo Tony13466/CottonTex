@@ -1,0 +1,51 @@
+<ng-template #divLoading>
+  <mat-grid-list cols="1">
+    <mat-grid-tile>
+      <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-template>
+
+<div *ngIf="order else divLoading" class="grid p-2">
+
+  <mat-card class="col-12 sm:col-6">
+    <mat-card-header>
+      <mat-card-title>{{ order.producto}}</mat-card-title>
+      <mat-card-subtitle>{{ order.cliente}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <mat-card class="col-12 sm:col-6">
+    <mat-card-header>
+      <mat-card-title>Detalles del Pedido: </mat-card-title>
+      <span>{{ order.producto }}</span>
+      <mat-card-subtitle>Código de Orden: {{ order.codigo_de_orden }}</mat-card-subtitle>
+    </mat-card-header>
+
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>{{ order.producto }}</mat-list-item>
+      <mat-list-item>{{ order.cliente }}</mat-list-item>
+      <mat-list-item>{{ order.proceso_actual}}</mat-list-item>
+
+      <mat-list-item>{{ order.color_elegido}}</mat-list-item>
+      <mat-list-item>{{ order.cantidad}}</mat-list-item>
+      <mat-list-item>{{order.ubicacion}}</mat-list-item>
+      <mat-list-item>{{order.fecha_de_creacion}}</mat-list-item>
+      <mat-list-item>{{order.fecha_de_inicio}}</mat-list-item>
+      <mat-list-item>{{order.fecha_estimada_de_salida}}</mat-list-item>
+    </mat-list>
+
+    <button
+      mat-button
+      color="warn"
+      (click)="goBack()"
+    >
+      Regresar
+
+    </button>
+  </mat-card-content>
+
+  </mat-card>
+
+</div>

@@ -1,0 +1,28 @@
+<h1>Listado de Pedidos</h1>
+<mat-divider></mat-divider>
+
+<div class="grid bm-8 pt-2">
+
+  <div *ngFor="let order of orders"
+    class="col-12 sm:col-6 md:col-4 xl:col-6">
+
+    <orders-order-card [order]="order"></orders-order-card>
+    <!--class="col-12 sm:col-6 md:col-4 xl:col-6"-->
+
+    <!--class="col-12 mt-5 md:col-6 md:col-offset-3 md:mt-8"-->
+
+  </div>
+
+  <div class="container">
+    <div class="col-12 mt-2 md:col-8 md:col-offset-2 md:mt-6">
+      <mat-paginator  [length]="100"
+                      [pageSize]="5"
+                      [pageSizeOptions]="[5, 10, 25, 100]"
+                      aria-label="Select page">
+      </mat-paginator>
+    </div>
+  </div>
+
+</div>
+
+
