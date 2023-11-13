@@ -12,41 +12,48 @@ const routes: Routes = [
   {
     path: 'auth',
     // guards
-    canActivate: [ isNotAuthenticatedGuard ],
+    //canActivate: [ isNotAuthenticatedGuard ],
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule),
     // canActivate: [ PublicGuard ],
     // canMatch: [ PublicGuard ]
   },
+
   {
-    path: 'dashboard',
-    // guards
-    canActivate: [ isAuthenticatedGuard ],
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardModule ),
+    path: 'admin',
+
+    loadChildren: () => import('./core/admin/admin.module').then( m => m.AdminModule),
   },
+
+  {
+    path: 'public',
+
+    loadChildren: () => import('./core/public/public.module').then( m => m.PublicModule)
+  },
+
   {
     path: 'orders',
-    canActivate: [ isAuthenticatedGuard ],
+    //canActivate: [ isAuthenticatedGuard ],
     loadChildren: () => import('./orders/orders.module').then( m => m.OrdersModule ),
     // canActivate: [ AuthGuard] ,
     // canMatch: [ AuthGuard ]
   },
   {
     path: '**',
-    redirectTo: 'orders'
+    redirectTo: 'admin'
   },
-  {
-    path: '404',
-    component: Error404PageComponent,
-  },
-  {
-    path:'',
-    redirectTo: 'orders',
-    pathMatch: 'full'
-  },
-  {
-    path: '**',
-    redirectTo: '404',
-  }
+  // {
+  //   path: '404',
+  //   component: Error404PageComponent,
+  // },
+  // {
+  //   path:'',
+  //   redirectTo: 'orders',
+  //   pathMatch: 'full'
+  // },
+  // {
+  //   path: '**',
+  //   redirectTo: '404',
+  // }
 ];
 
 @NgModule({

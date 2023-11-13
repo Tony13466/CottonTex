@@ -92,6 +92,40 @@ export class AuthService {
     //return of(false)
   }
 
+  // registerUser(register: any): Observable<any> {
+  //   return this.http.post(this.baseUrl, register);
+  // }
+
+  getUsers():Observable<User[]>{
+  //getUsers():Observable<boolean>{
+    //const url = `${ this.baseUrl }/auth/login`;
+    // return this.http.get<CheckTokenResponse>(url)
+    //  .pipe(
+    //   map( ({ user, token }) => this.setAuthentication( user, token )),
+    //   catchError( err => throwError( () => err.error.message ))
+    //  )
+    return this.http.get<User[]>(`${ this.baseUrl }/auth`);
+  }
+
+
+
+  registerUser( user: User ): Observable<User> {
+    return this.http.post<User>(`${ this.baseUrl }/auth/register`, user);
+  }
+
+  updateUser( user: User ): Observable<User> {
+    if ( !user._id ) throw Error('User _id is required');
+    return this.http.patch<User>(`${ this.baseUrl }/auth/register/${ user._id }`, user);
+  }
+
+  deleteUserById( _id: string ): Observable<boolean> {
+    return this.http.delete(`${ this.baseUrl }/auth/register/${ _id }`)
+      .pipe(
+        map( resp => true ),
+        catchError( err => of(false) ),
+      );
+  }
+
   logout() {
     localStorage.removeItem('token');
     this._currentUser.set(null);

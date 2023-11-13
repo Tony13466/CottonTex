@@ -14,6 +14,41 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   justify-content: space-between;
 }
 
+.card-general {
+  max-width: 800px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-paginator {
+  display: flex;
+  justify-content: center;
+}
+
+.container2 {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 56px;
+  padding: 0 8px;
+  flex-wrap: wrap-reverse;
+  width: 100%;
+}
+
+.drawer-container {
+  width: 1000px;
+  height: 600px;
+  margin: 5px;
+  border: 1px solid #555;
+}
+
+
+
 
 
 /*//////////////////////////////////////////////////////////////////

@@ -1,19 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, map, of } from 'rxjs';
 import { Order } from '../interfaces/order.interface';
 import { environments } from '../../../environments/environments';
 
-
 @Injectable({providedIn: 'root'})
 
 export class OrdersService {
 
-  private baseUrl: string = environments.baseUrl;
+  private readonly baseUrl: string = environments.baseUrl;
 
-  //private http = inject( HttpClient );
+  private http = inject( HttpClient );
 
-  constructor(private http: HttpClient) {}
+
+
+
+
+  constructor() {
+
+  }
 
   getOrders():Observable<Order[]>{
     return this.http.get<Order[]>(`${ this.baseUrl }/orders`);
@@ -27,24 +32,24 @@ export class OrdersService {
     return this.http.get<Order[]>(`${ this.baseUrl }/orders?q=${ query }&_limit=6`);
   }
 
-  addOrder ( order: Order ): Observable<Order>{
+  registerOrder ( order: Order ): Observable<Order>{
     return this.http.post<Order>(`${ this.baseUrl }/orders`, order);
   }
 
   updateOrder( order: Order): Observable<Order>{
     if ( !order.id_orden ) throw Error('Order id is required');
-
     return this.http.patch<Order>(`${ this.baseUrl }/orders/${ order.id_orden }`, order);
   }
 
   deleteOrderById( id_orden: string ): Observable<boolean> {
-
     return this.http.delete(`${ this.baseUrl }/orders/${ id_orden }`)
     .pipe(
+      map( resp => true ),
       catchError( err => of(false) ),
-      map( resp => true )
     );
   }
+
+
 
   //onDeleteOrder(){
     //if ( !this.currentOrder.id ) throw Error('Order id is required');

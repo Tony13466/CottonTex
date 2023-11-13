@@ -1,36 +1,6 @@
-<!-- <div class="flex flex-column">
-  <span class="text-lg mb-4">Registro</span>
-
-  <mat-form-field>
-    <mat-label>Usuario</mat-label>
-    <input type="text" matInput placeholder="Usuario">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Nombre</mat-label>
-    <input type="text" matInput placeholder="Nombre">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Contraseña</mat-label>
-    <input type="text" matInput placeholder="Contraseña">
-  </mat-form-field>
-
-  <button mat-button mat-flat-button color="primary">
-    <mat-icon>save</mat-icon>
-    Registrar
-  </button>
-
-  <div class="flex justify-content-end mt-5">
-      <a routerLink="/auth/login">¿Ya tienes cuenta?</a>
-  </div>
-
-</div> -->
-
-
 <h1>
-  Usuario Nuevo / Crear Usuario
-  <small>User</small>
+  {{ currentUser._id ? 'Editar' : 'Crear'}} usuario
+  <small *ngIf="currentUser._id"> {{ currentUser.name }} </small>
 </h1>
 
 <mat-divider class="mb-2"></mat-divider>
@@ -83,19 +53,24 @@
 
           <mat-form-field class="col-12">
             <mat-label>Rol (admin o user)</mat-label>
-            <mat-select
-              formControlName="rol"
-              required
-              >
+            <mat-select formControlName="rol" required>
                 <mat-option *ngFor="let rol of rol"
                   [value]="rol.rol">
-                  {{ rol.rol }}
+                  {{ rol.desc }}
                 </mat-option>
             </mat-select>
           </mat-form-field>
         </form>
 
         <div class="flex justify-content-between">
+          <button
+            mat-flat-button
+            color="warn"
+            (click)="limpiarDatos()"
+            >
+            <mat-icon>delete</mat-icon>
+            Limpiar
+          </button>
 
           <button
             mat-flat-button
@@ -115,7 +90,3 @@
     </mat-card>
   </div>
 </div>
-
-<pre>
-  {{ currentUser | json }}
-</pre>

@@ -1,0 +1,156 @@
+<h1>
+  {{ currentOrder.id_orden ? 'Editar' : 'Crear'}} Orden
+  <small *ngIf="currentOrder.id_orden"> {{ currentOrder.codigo_de_orden }} </small>
+</h1>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<div class="grid">
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <mat-card-content>
+
+
+        <form class="grid" [formGroup]="myForm" (ngSubmit)="register()">
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Id de orden</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="id_orden"
+            />
+          </mat-form-field>
+
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Código de la orden</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="codigo_de_orden"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Ubicación de la orden</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="ubicacion"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Nombre del cliente</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="cliente"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Nombre del Producto</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="producto"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Proceso actual</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="proceso_actual"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Color elegido</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="color_elegido"
+            />
+          </mat-form-field>
+
+
+          <mat-form-field class="col-12 sm:col-6">
+            <mat-label>Cantidad material</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="cantidad"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Fecha de inicio de la orden</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="fecha_de_inicio"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Fecha de estimación de termino de la orden</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="fecha_estimada_de_salida"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Fecha de creación de la orden</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="fecha_de_creacion"
+            />
+          </mat-form-field>
+        </form>
+
+        <div class="flex justify-content-between">
+          <button
+            mat-flat-button
+            color="warn"
+            (click)="limpiarDatos()"
+            >
+            <mat-icon>delete</mat-icon>
+            Limpiar
+          </button>
+
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="register()"
+            >
+            <mat-icon>save</mat-icon>
+            Crear
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <img class="imagenTamaño"  src="assets/images/order.jpg" alt="image user" mat-card-image>
+    </mat-card>
+  </div>
+</div>

@@ -28,8 +28,8 @@ export class LoginPageComponent {
     this.authService.login( email, password )
     //this.authService.login('textildias@gmail.com', '123456')
       .subscribe({
-        next: () => this.router.navigateByUrl('/dashboard'),
-        //next: () => this.router.navigateByUrl('/orders'),
+        //next: () => this.router.navigateByUrl('/dashboard'),
+        next: () => this.router.navigateByUrl('/orders'),
         //console.log('Todo bien!'),
         error: (message) => {
           //Swal.fire('Error', message, 'error' )

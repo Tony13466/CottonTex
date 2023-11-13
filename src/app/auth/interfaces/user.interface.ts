@@ -8,9 +8,16 @@
 
 
 export interface User {
-  _id:      string;
-  email:    string;
-  name:     string;
-  isActive: boolean;
-  roles:    string[];
+  _id:       string;
+  documento: string;
+  email:     string;
+  name:      string;
+  password:  string;
+  isActive:  boolean;
+  rol:     Roles;
+}
+
+export enum Roles {
+  admin = "admin",
+  user = "user",
 }
