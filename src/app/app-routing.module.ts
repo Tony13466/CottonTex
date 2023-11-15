@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'auth',
     // guards
-    //canActivate: [ isNotAuthenticatedGuard ],
+    canActivate: [ isNotAuthenticatedGuard ],
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule),
     // canActivate: [ PublicGuard ],
     // canMatch: [ PublicGuard ]
@@ -32,14 +32,14 @@ const routes: Routes = [
 
   {
     path: 'orders',
-    //canActivate: [ isAuthenticatedGuard ],
+    canActivate: [ isAuthenticatedGuard ],
     loadChildren: () => import('./orders/orders.module').then( m => m.OrdersModule ),
     // canActivate: [ AuthGuard] ,
     // canMatch: [ AuthGuard ]
   },
   {
     path: '**',
-    redirectTo: 'admin'
+    redirectTo: 'public'
   },
   // {
   //   path: '404',
