@@ -16,7 +16,7 @@ export class LayoutPublicComponent {
   public sidebarItems = [
     { label: 'Crear Usuario', icon: 'label', url: './createuser'},
     { label: 'Crear Orden', icon: 'label', url: './createorder'},
-
+    { label: 'Mis datos', icon: 'label', url: './showdata'},
   ]
 
   constructor(private router: Router){}
