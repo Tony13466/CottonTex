@@ -31,12 +31,14 @@
 
     <span class="spacer"></span>
 
+    <h1>{{ user()?.email }}</h1>
+
     <button mat-button (click)="onLogout()">
       Cerrar Sesión
     </button>
   </mat-toolbar>
 
-    <!--<span>{{ user?.email }}</span>-->
+
 
     <!-- <button mat-button (click)="onLogout()">
       Logout

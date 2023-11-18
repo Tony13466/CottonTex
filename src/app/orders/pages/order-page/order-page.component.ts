@@ -23,7 +23,7 @@ export class OrderPageComponent implements OnInit {
 
   constructor(
     private ordersService: OrdersService,
-    private activateRoute: ActivatedRoute,
+    //private activateRoute: ActivatedRoute,
     private router: Router,
   ) { }
 

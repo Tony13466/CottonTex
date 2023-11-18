@@ -1,40 +1,40 @@
 <mat-card>
+
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+
   <div class="mat-elevation-z8">
-
-    <mat-form-field>
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-    </mat-form-field>
-
-    <table mat-table [dataSource]="datosUser">
+    <table mat-table [dataSource]="dataSource" matSort>
 
       <!-- Position Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> Id </th>
-        <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+        <td mat-cell *matCellDef="let element"> {{ user()?._id }} </td>
       </ng-container>
 
       <!-- Name Column -->
       <ng-container matColumnDef="documento">
         <th mat-header-cell *matHeaderCellDef> Documento </th>
-        <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+        <td mat-cell *matCellDef="let element"> {{user()?.documento}} </td>
       </ng-container>
 
       <!-- Weight Column -->
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef> Correo Electrónico </th>
-        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        <td mat-cell *matCellDef="let element"> {{user()?.email}} </td>
       </ng-container>
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="cliente">
         <th mat-header-cell *matHeaderCellDef> Nombre del cliente </th>
-        <td mat-cell *matCellDef="let element"> {{element.cliente}} </td>
+        <td mat-cell *matCellDef="let element"> {{user()?.name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="rol">
         <th mat-header-cell *matHeaderCellDef> Rol </th>
-        <td mat-cell *matCellDef="let element"> {{element.rol}} </td>
+        <td mat-cell *matCellDef="let element"> {{user()?.rol}} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

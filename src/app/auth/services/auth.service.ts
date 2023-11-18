@@ -107,7 +107,9 @@ export class AuthService {
     return this.http.get<User[]>(`${ this.baseUrl }/auth`);
   }
 
-
+  getUser ( _id: string ): Observable<User|undefined> {
+    return this.http.get<User>(`${ this.baseUrl }/auth/${ _id }`)
+  }
 
   registerUser( user: User ): Observable<User> {
     return this.http.post<User>(`${ this.baseUrl }/auth/register`, user);

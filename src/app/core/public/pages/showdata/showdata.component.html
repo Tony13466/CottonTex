@@ -1,0 +1,85 @@
+
+<h1>
+  {{ currentUser._id ? 'Actualizar' : 'Crear'}} usuario
+  <small *ngIf="currentUser._id"> {{ currentUser.name }} </small>
+</h1>
+
+<mat-divider class="mb-2"></mat-divider>
+
+<div class="grid">
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <mat-card-content>
+
+        <form class="grid" [formGroup]="myForm" (ngSubmit)="update()">
+          <mat-form-field class="col-12">
+            <mat-label>Nombre del cliente o administrador</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="name"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Correo electrónico</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="email"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>DNI o RUC</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="documento"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Contraseña</mat-label>
+            <input
+              matInput
+              type="text"
+              required
+              formControlName="password"
+            />
+          </mat-form-field>
+
+        </form>
+
+        <div class="flex justify-content-between">
+          <button
+            mat-flat-button
+            color="warn"
+            (click)="limpiarDatos()"
+            >
+            <mat-icon>delete</mat-icon>
+            Limpiar
+          </button>
+
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="update()"
+            >
+            <mat-icon>save</mat-icon>
+            Actualizar
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-12 sm:col-6">
+    <mat-card>
+      <img class="imagenTamaño"  src="assets/images/user.png" alt="image user" mat-card-image>
+    </mat-card>
+  </div>
+</div>
+
