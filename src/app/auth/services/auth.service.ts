@@ -4,7 +4,7 @@ import { environments } from 'src/environments/environments';
 import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 // import { User } from '../interfaces/user.interface';
 // import { Observable, catchError, map, of, tap } from 'rxjs';
-import { AuthStatus, CheckTokenResponse, LoginResponse, User } from '../interfaces';
+import { AuthStatus, CheckTokenResponse, LoginResponse, User, Roles } from '../interfaces';
 
 
 @Injectable({providedIn: 'root'})
@@ -17,11 +17,12 @@ export class AuthService {
 
   private _currentUser = signal<User|null>(null);
   private _authStatus = signal<AuthStatus>( AuthStatus.checking );
+  private _authRoles = signal<Roles>( Roles.admin);
 
   //! Al mundo exterior
   public currentUser = computed( () => this._currentUser() );
   public authStatus = computed( () => this._authStatus() );
-
+  public authRoles = computed( () => this._authRoles());
   constructor() {
     this.checkAuthStatus().subscribe();
   }
@@ -32,6 +33,15 @@ export class AuthService {
     this._authStatus.set( AuthStatus.authenticated );
     localStorage.setItem('token', token);
 
+    return true;
+  }
+
+
+  private setRoles(roles: Roles, token:string ):boolean {
+
+    this._authRoles.set( roles );
+    this._authRoles.set( Roles.admin );
+    localStorage.setItem('token', token);
     return true;
   }
 
@@ -91,6 +101,31 @@ export class AuthService {
         );
     //return of(false)
   }
+
+  checkAuthRoles():Observable<boolean> {
+    const url   = `${ this.baseUrl }/auth`;
+    const token = localStorage.getItem('token');
+
+    if ( !token ) {
+      this.logout();
+      return of(false);
+    }
+
+    const headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${ token }`);
+
+      return this.http.get<CheckTokenResponse>(url, { headers })
+        .pipe(
+          map( ({ rol, token }) => this.setRoles( rol, token )),
+
+          catchError(() => {
+            this._authRoles.set( Roles.user );
+            return of(false);
+          })
+        );
+  }
+
+
 
   // registerUser(register: any): Observable<any> {
   //   return this.http.post(this.baseUrl, register);

@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { AuthStatus } from '../interfaces';
+import { AuthStatus, Roles } from '../interfaces';
 
 export const isAuthenticatedGuard: CanActivateFn = (route, state) => {
 
@@ -10,7 +10,15 @@ export const isAuthenticatedGuard: CanActivateFn = (route, state) => {
 
   if ( authService.authStatus() === AuthStatus.authenticated ) {
     // router.navigateByUrl('/dashboard');
-    // router.navigateByUrl('/orders');
+    //router.navigateByUrl('/orders');
+    // if ( authService.authStatus() === AuthStatus.roladmin) {
+    //   router.navigateByUrl('/core/admin');
+    // }
+
+    // if ( authService.authStatus() === AuthStatus.roluser) {
+    //   router.navigateByUrl('/orders');
+    // }
+
     return true;
   }
 
