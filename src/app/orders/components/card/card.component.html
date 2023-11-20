@@ -24,20 +24,25 @@
   <mat-divider></mat-divider>
 
   <mat-card-actions class="botones">
-    <button mat-button
+
+    <button *ngIf = "user()?.rol == 'admin'"
+      mat-button
       mat-raised
       color="primary"
-      [routerLink]="['/orders',order.id_orden]">
+      [routerLink]="['/orders',order.id_orden]"
+      >
       <mat-icon>edit</mat-icon>
       Editar
     </button>
 
-  <button mat-button
-    mat-raised
-    [routerLink]="['/orders',order.id_orden]">
-    <mat-icon>more_horiz</mat-icon>
-    Ver Detalles
-  </button>
+    <button mat-button
+      mat-raised
+      [routerLink]="['/orders',order.id_orden]">
+      <mat-icon>more_horiz</mat-icon>
+      Ver Detalles
+    </button>
+
+
   </mat-card-actions>
 
 

@@ -17,7 +17,7 @@ export class AuthService {
 
   private _currentUser = signal<User|null>(null);
   private _authStatus = signal<AuthStatus>( AuthStatus.checking );
-  private _authRoles = signal<Roles>( Roles.admin);
+  private _authRoles = signal<Roles>(Roles.admin );
 
   //! Al mundo exterior
   public currentUser = computed( () => this._currentUser() );
