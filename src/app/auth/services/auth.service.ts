@@ -96,7 +96,14 @@ export class AuthService {
   //   return this.http.post(this.baseUrl, register);
   // }
 
-  getUsers():Observable<User[]>{
+  getUsers():Observable<boolean>{
+    const url = `${ this.baseUrl }/auth`;
+    return this.http.get<CheckTokenResponse>(url)
+      .pipe(
+        map( ({ user, token }) => this.setAuthentication( user, token )),
+        catchError( err => throwError( () => err.error.message ))
+      )
+  }
   //getUsers():Observable<boolean>{
     //const url = `${ this.baseUrl }/auth/login`;
     // return this.http.get<CheckTokenResponse>(url)
@@ -104,11 +111,12 @@ export class AuthService {
     //   map( ({ user, token }) => this.setAuthentication( user, token )),
     //   catchError( err => throwError( () => err.error.message ))
     //  )
-    return this.http.get<User[]>(`${ this.baseUrl }/auth`);
-  }
+    //return this.http.get<User[]>(`${ this.baseUrl }/auth`);
+  //}
 
   getUser ( _id: string ): Observable<User|undefined> {
     return this.http.get<User>(`${ this.baseUrl }/auth/${ _id }`)
+
   }
 
   registerUser( user: User ): Observable<User> {

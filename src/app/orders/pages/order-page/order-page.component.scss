@@ -1,0 +1,92 @@
+
+h2 {
+  font-family: Lato;
+  text-align: center;
+  color:	rgb(241, 148, 8);
+  font-weight: bold;
+}
+
+.circles{
+  height: 1.400em;
+  width: 1.400em;
+  //margin-top: 1em;
+  border: 0.200em solid #000;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.active{
+    background-color:#ffa500;
+}
+
+.circle-desc-active{
+font-weight: bold;
+}
+
+.bar{
+  display: block;
+  //width: 1.063em;
+  width: 3px;
+  //height: 1.063em;
+  height: 20px;
+  //margin-bottom:0.469em;
+  margin: 0 8px;
+  border: 0.031em solid #000;
+  color:#000;
+  background-color:#000;
+}
+
+.container {
+  padding: 50px;
+  width: 420px;
+  height: 520px;
+  margin: 20px 20px;
+}
+
+.circle-desc {
+  top:5.000em;
+  font-size: 1.125em;
+  margin-left: 1em;
+  width: auto;
+}
+
+@media only screen and (max-width: 320px){
+  body {
+    font-size:20%
+ }
+}
+
+/*extra small devices*/
+@media only screen and (max-width: 600px){
+  body {
+    font-size:40%
+ }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    font-size:60%
+ }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+ body {
+    font-size:80%
+ }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+ body {
+    font-size:100%
+ }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size:120%
+ }
+}

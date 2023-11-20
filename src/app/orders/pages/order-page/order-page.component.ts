@@ -1,22 +1,27 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs';
-
+import { Router } from '@angular/router';
 import { OrdersService } from '../../services/orders.service';
 import { Order } from '../../interfaces/order.interface';
-
 
 @Component({
   selector: 'app-order-page',
   templateUrl: './order-page.component.html',
-  styles: [
-  ]
+  styleUrls: ['./order-page.component.scss'],
 })
 export class OrderPageComponent implements OnInit {
 
-  //public order?: Order;
-
-  //@Input() id:any = '';
+  public etapas = [
+    "TERMOFIJADO TUBULAR",
+    "TERMOFIJADO EN RAMA",
+    "TEÑIDO",
+    "HIDRO",
+    "SECADORA",
+    "PERCHADO",
+    "ENROLLADO",
+    "COMPACTADO TUBULAR",
+    "ALMACEN DE TELA ACABADA",
+    "DESPACHADO"];
+  //public orderStatus = "TERMOFIJADO TUBULAR";
 
   @Input()
   public order!: Order;
@@ -27,11 +32,8 @@ export class OrderPageComponent implements OnInit {
     private router: Router,
   ) { }
 
-  //ngOnInit(): void {
-
   ngOnInit(): void {
     // if ( !this.order ) throw Error('Order property is required');
-
     this.getData();
 
   }
@@ -43,33 +45,13 @@ export class OrderPageComponent implements OnInit {
         console.log(order);
         this.order = order;
       });
-
-    }
-
-
-
-
-    // this.activateRoute.params
-    //   .pipe(
-    //     switchMap( ({ id_orden }) => this.ordersService.getOrder( id_orden )),
-    //   )
-    //   .subscribe( order => {
-    //     if ( !order ) return this.router.navigate([ '/orders/list'])
-    //     //console.log(order)
-    //     this.order = order;
-    //     //console.log(this.order.cantidad)
-    //     return;
-    //   })
-
-    goBack(): void {
-      // ahora si
-
-    }
   }
 
-  // goBack() :void {
+  goBack(): void {
+    this.router.navigate([ '/orders/list'])
+  }
+}
 
-  // }
 
 
 

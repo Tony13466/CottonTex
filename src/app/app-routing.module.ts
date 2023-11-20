@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'admin'
+    redirectTo: 'public'
   },
   // {
   //   path: '404',

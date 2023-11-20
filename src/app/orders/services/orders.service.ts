@@ -12,10 +12,6 @@ export class OrdersService {
 
   private http = inject( HttpClient );
 
-
-
-
-
   constructor() {
 
   }
@@ -27,6 +23,13 @@ export class OrdersService {
   getOrder ( id_orden: string ): Observable<Order|undefined> {
     return this.http.get<Order>(`${ this.baseUrl }/orders/${ id_orden }`)
   }
+
+
+  getOrderStatus ( proceso_actual: string ): Observable<Order> {
+    return this.http.get<Order>(`${ this.baseUrl }/orders/${ proceso_actual }`)
+  }
+
+
 
   getSuggestions( query: string ): Observable<Order[]> {
     return this.http.get<Order[]>(`${ this.baseUrl }/orders?q=${ query }&_limit=6`);

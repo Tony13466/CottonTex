@@ -13,14 +13,12 @@ import { User } from '../../../auth/interfaces/user.interface';
 export class LayoutPageComponent {
 
   private authService = inject( AuthService );
-
   public user = computed(() => this.authService.currentUser() );
 
   public sidebarItems = [
     { label: 'Listado', icon: 'label', url: './list'},
     { label: 'Buscar', icon: 'search', url: './search'},
-    { label: 'Lista de Usuarios', icon: 'label', url: '/core/admin'},
-
+    { label: 'Mis datos', icon: 'label', url: '/public/showdata'},
   ]
 
   constructor(

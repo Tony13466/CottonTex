@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../../services/orders.service';
 import { Order } from '../../interfaces/order.interface';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-list-page',
@@ -10,6 +11,8 @@ import { Order } from '../../interfaces/order.interface';
 })
 export class ListPageComponent implements OnInit {
 
+  p: number = 1;
+
   public orders: Order[] = [];
 
   constructor( private ordersService: OrdersService ) {}
@@ -17,4 +20,6 @@ export class ListPageComponent implements OnInit {
   ngOnInit(): void {
     this.ordersService.getOrders().subscribe ( orders => this.orders = orders );
   }
+
+
 }

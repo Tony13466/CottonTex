@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 .speacer {
@@ -10,6 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .cabecera {
+
   display: flex;
   justify-content: space-between;
 }
@@ -47,10 +48,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border: 1px solid #555;
 }
 
-
-
-
-
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
@@ -85,29 +82,33 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 body, html {
-    height: 100%;
-    font-family: Poppins-Regular, sans-serif;
+  margin: 0;
+  height: 100%;
+  font-family: Poppins-Regular, sans-serif;
+  position: relative;
+  padding-bottom: 3em;
+  min-height: 100vh;
 }
 
 /*---------------------------------------------*/
 a {
-    font-family: Poppins-Regular;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #666666;
-    margin: 0px;
-    transition: all 0.4s;
-    -webkit-transition: all 0.4s;
+  font-family: Poppins-Regular;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666666;
+  margin: 0px;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
 }
 
 a:focus {
-    outline: none !important;
+  outline: none !important;
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
   color: #a64bf4;
 }
 
@@ -128,7 +129,6 @@ ul, li {
     margin: 0px;
     list-style-type: none;
 }
-
 
 /*---------------------------------------------*/
 input {
@@ -210,7 +210,6 @@ button:hover {
   overflow: hidden;
 }
 
-
 /*------------------------------------------------------------------
 [ Form ]*/
 
@@ -226,8 +225,6 @@ button:hover {
   line-height: 1.2;
   text-align: center;
 }
-
-
 
 /*------------------------------------------------------------------
 [ Input ]*/
@@ -258,7 +255,6 @@ button:hover {
   background: transparent;
   padding: 0 7px 0 43px;
 }
-
 
 /*---------------------------------------------*/
 .focus-input100 {
@@ -307,7 +303,6 @@ button:hover {
   transition: all 0.4s;
 }
 
-
 .input100:focus + .focus-input100::before {
   width: 100%;
 }
@@ -323,7 +318,6 @@ button:hover {
 .has-val.input100 + .focus-input100::after {
   color: #a64bf4;
 }
-
 
 /*------------------------------------------------------------------
 [ Button ]*/
@@ -2458,10 +2452,6 @@ button:hover {
 .lh-2-8 {line-height: 2.8;}
 .lh-2-9 {line-height: 2.9;}
 
-
-
-
-
 /*[ SHAPE ]
 ///////////////////////////////////////////////////////////
 */
@@ -2494,7 +2484,6 @@ display: flex;
 .float-l {float: left;}
 .float-r {float: right;}
 
-
 /*[ Width & Height ]
 -----------------------------------------------------------
 */
@@ -2522,7 +2511,6 @@ height: 100%;
 .left-auto {left: auto;}
 .right-auto {right: auto;}
 
-
 /*[ Opacity ]
 -----------------------------------------------------------
 */
@@ -2544,8 +2532,6 @@ height: 100%;
 .bgwhite {background-color: white;}
 .bgblack {background-color: black;}
 
-
-
 /*[ Wrap Picture ]
 -----------------------------------------------------------
 */
@@ -2564,8 +2550,6 @@ overflow: hidden;
 .wrap-pic-cir img {
 width: 100%;
 }
-
-
 
 /*[ Hover ]
 -----------------------------------------------------------
@@ -2592,8 +2576,6 @@ width: 100%;
 transform: scale(1.1);
 }
 
-
-
 /*[  ]
 -----------------------------------------------------------
 */
@@ -2603,9 +2585,6 @@ transform: scale(1.1);
 
 .visible-false {visibility: hidden;}
 .visible-true {visibility: visible;}
-
-
-
 
 /*[ Transition ]
 -----------------------------------------------------------
@@ -2658,8 +2637,6 @@ transform: scale(1.1);
   -moz-transition: all 1s;
   transition: all 1s;
 }
-
-
 
 /*[ Layout ]
 ///////////////////////////////////////////////////////////

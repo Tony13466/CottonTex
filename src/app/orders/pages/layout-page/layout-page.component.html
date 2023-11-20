@@ -22,8 +22,6 @@
     </mat-nav-list>
   </mat-sidenav>
 
-
-
   <mat-toolbar color="primary" class="cabecera">
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
@@ -31,7 +29,7 @@
 
     <span class="spacer"></span>
 
-    <h1>{{ user()?.email }}</h1>
+    <h1>{{ user()?.name }}</h1>
 
     <button mat-button (click)="onLogout()">
       Cerrar Sesión
@@ -39,24 +37,14 @@
   </mat-toolbar>
 
 
-
-    <!-- <button mat-button (click)="onLogout()">
-      Logout
-    </button> -->
-
   <div class="container">
     <div class="col-12 mt-2 md:col-8 md:col-offset-2 md:mt-6">
       <router-outlet></router-outlet>
     </div>
   </div>
 
-  <footer>
-    <!-- Copyright -->
-    <div>
-      Mi pie de página
-    </div>
-    <!-- Copyright -->
-  </footer>
+
+
 
 </mat-sidenav-container>
 
