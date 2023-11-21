@@ -19,7 +19,7 @@ export class LayoutPageComponent {
     { label: 'Listado', icon: 'label', url: './list'},
     { label: 'Buscar', icon: 'search', url: './search'},
     { label: 'Mis datos', icon: 'label', url: '/public/showdata'},
-    { label: 'Acceso Admin', icon: 'label', url: '/admin/homeadmin'},
+    //{ label: 'Acceso Admin', icon: 'label', url: '/admin/homeadmin'},
 
   ]
 
