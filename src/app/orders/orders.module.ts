@@ -13,6 +13,7 @@ import { CardComponent } from './components/card/card.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSliderModule } from '@angular/material/slider';
 
+
 @NgModule({
   declarations: [
     LayoutPageComponent,

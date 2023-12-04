@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeadminComponent } from './pages/homeadmin/homeadmin.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { MatTableModule } from '@angular/material/table';
+import { OrderUpdateComponent } from './pages/order-update/order-update.component';
 
 
 
@@ -21,6 +22,7 @@ import { MatTableModule } from '@angular/material/table';
     CreateorderComponent,
     HomeadminComponent,
     ConfirmDialogComponent,
+    OrderUpdateComponent,
   ],
   imports: [
     CommonModule,

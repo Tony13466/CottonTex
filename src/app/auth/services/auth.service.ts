@@ -160,11 +160,11 @@ export class AuthService {
 
   updateUser( user: User ): Observable<User> {
     if ( !user._id ) throw Error('User _id is required');
-    return this.http.patch<User>(`${ this.baseUrl }/auth/register/${ user._id }`, user);
+    return this.http.patch<User>(`${ this.baseUrl }/auth/${ user._id }`, user);
   }
 
   deleteUserById( _id: string ): Observable<boolean> {
-    return this.http.delete(`${ this.baseUrl }/auth/register/${ _id }`)
+    return this.http.delete(`${ this.baseUrl }/auth/${ _id }`)
       .pipe(
         map( resp => true ),
         catchError( err => of(false) ),

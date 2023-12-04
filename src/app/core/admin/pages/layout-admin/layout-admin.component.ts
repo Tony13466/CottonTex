@@ -15,7 +15,7 @@ export class LayoutAdminComponent {
   public sidebarItems = [
     { label: 'Crear Usuario', icon: 'label', url: './createuser'},
     { label: 'Crear Orden', icon: 'label', url: './createorder'},
-    { label: 'Lista de Ordenes', icon: 'label', url: '/orders'},
+    { label: 'Listado de Ordenes', icon: 'label', url: '/orders'},
 
   ]
 

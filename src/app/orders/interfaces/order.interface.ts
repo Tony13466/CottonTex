@@ -5,6 +5,7 @@ export interface Order {
   codigo_de_orden:          string;
   ubicacion:                string;
   cliente:                  string;
+  doc_cliente:              string;
   producto:                 string;
   proceso_actual:           string;
   color_elegido:            string;

@@ -23,6 +23,7 @@ export class CreateorderComponent {
     codigo_de_orden:          ['',[Validators.required, Validators.minLength(8)]],
     ubicacion:                ['',[Validators.required]],
     cliente:                  ['',[Validators.required]],
+    doc_cliente:              ['',[Validators.required, Validators.minLength(8)]],
     producto:                 ['',[Validators.required]],
     proceso_actual:           ['',[Validators.required]],
     color_elegido:            ['',[Validators.required]],
@@ -51,8 +52,10 @@ export class CreateorderComponent {
     this.ordersService.registerOrder( this.currentOrder )
       .subscribe( order => {
         // TODO: mostrar snackbar, y navegar a /users/edit/ user._id
+
         this.showSnackbar(`La orden ${ order.codigo_de_orden } se creó correctamente!`);
         this.myForm.reset()
+        //this.router.navigate(['/orders']);
       })
   }
 

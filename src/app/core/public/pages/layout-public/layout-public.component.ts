@@ -11,7 +11,7 @@ export class LayoutPublicComponent {
   public user = computed(() => this.authService.currentUser() );
 
   public sidebarItems = [
-    { label: 'Mis ordenes', icon: 'label', url: '/orders'},
+    { label: 'Listado de ordenes', icon: 'label', url: '/orders'},
     { label: 'Mis datos', icon: 'label', url: './showdata'},
   ]
 

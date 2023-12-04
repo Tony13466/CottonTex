@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, inject, computed } from '@angular/core';
 import { Router } from '@angular/router';
 import { OrdersService } from '../../services/orders.service';
 import { Order } from '../../interfaces/order.interface';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-order-page',
@@ -25,7 +26,8 @@ export class OrderPageComponent implements OnInit {
 
   @Input()
   public order!: Order;
-
+  private authService = inject( AuthService );
+  public user = computed(() => this.authService.currentUser() );
   constructor(
     private ordersService: OrdersService,
     //private activateRoute: ActivatedRoute,

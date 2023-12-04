@@ -16,7 +16,7 @@ export class LayoutPageComponent {
   public user = computed(() => this.authService.currentUser() );
 
   public sidebarItems = [
-    { label: 'Listado', icon: 'label', url: './list'},
+    { label: 'Listado de ordenes', icon: 'label', url: './list'},
     { label: 'Buscar', icon: 'search', url: './search'},
     { label: 'Mis datos', icon: 'label', url: '/public/showdata'},
     //{ label: 'Acceso Admin', icon: 'label', url: '/admin/homeadmin'},

@@ -1,5 +1,5 @@
-
-<mat-card class="card-general">
+<!-- *ngIf = "user()?.documento == order.doc_cliente" -->
+<mat-card class="card-general" *ngIf="(user()?.rol == 'admin') || (user()?.documento == order.doc_cliente)">
   <mat-card-header>
     <mat-card-title> {{ order.producto }}</mat-card-title>
     <mat-card-subtitle>{{ order.cliente }}</mat-card-subtitle>
@@ -29,8 +29,7 @@
       mat-button
       mat-raised
       color="primary"
-      [routerLink]="['/orders',order.id_orden]"
-      >
+      [routerLink]="['/orders/edit', order.id_orden ]">
       <mat-icon>edit</mat-icon>
       Editar
     </button>

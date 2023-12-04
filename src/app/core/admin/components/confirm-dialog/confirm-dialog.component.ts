@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/app/auth/interfaces';
+import { Order } from 'src/app/orders/interfaces';
 
 @Component({
   selector: 'app-confirm-dialog',
@@ -12,7 +13,7 @@ export class ConfirmDialogComponent {
 
   constructor(
     public dialogRef: MatDialogRef<ConfirmDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: User,
+    @Inject(MAT_DIALOG_DATA) public data: Order,
   ) {}
 
   onNoClick(): void {

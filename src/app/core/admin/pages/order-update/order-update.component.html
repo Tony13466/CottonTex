@@ -11,7 +11,7 @@
       <mat-card-content>
 
 
-        <form class="grid" [formGroup]="myForm" (ngSubmit)="register()">
+        <form class="grid" [formGroup]="myForm" (ngSubmit)="update()">
 
           <mat-form-field class="col-12 sm:col-6">
             <mat-label>Id de orden</mat-label>
@@ -139,19 +139,19 @@
           <button
             mat-flat-button
             color="warn"
-            (click)="limpiarDatos()"
+            (click)="onDeleteOrder()"
             >
             <mat-icon>delete</mat-icon>
-            Limpiar
+            Eliminar Orden
           </button>
 
           <button
             mat-flat-button
             color="primary"
-            (click)="register()"
+            (click)="update()"
             >
             <mat-icon>save</mat-icon>
-            Crear
+            Actualizar Orden
           </button>
         </div>
       </mat-card-content>
@@ -160,6 +160,13 @@
   <div class="col-12 sm:col-6">
     <mat-card>
       <img class="imagenTamaño"  src="assets/images/order.jpg" alt="image user" mat-card-image>
+      <mat-divider></mat-divider>
+
+      <div class="flex justify-content-between">
+        <button mat-raised-button color="warn" (click)="goBack()">Regresar</button>
+      </div>
+
     </mat-card>
   </div>
 </div>
+

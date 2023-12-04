@@ -1,13 +1,15 @@
 <h1>Listado de Pedidos</h1>
 <mat-divider></mat-divider>
 
-<div class="grid bm-8 pt-2">
-  <div class="col-12 sm:col-6 md:col-4 xl:col-6"
-      *ngFor="let order of orders | paginate: { itemsPerPage: 4, currentPage: p}">
-    <orders-order-card [order]="order"></orders-order-card>
-    <!--class="col-12 sm:col-6 md:col-4 xl:col-6"-->
-    <!--class="col-12 mt-5 md:col-6 md:col-offset-3 md:mt-8"-->
-  </div>
+<div class="grid bm-8 pt-2" >
+
+    <div class="col-12 sm:col-6 md:col-4 xl:col-6" *ngFor="let order of orders | paginate: { itemsPerPage: 8, currentPage: p}">
+
+        <orders-order-card [order]="order" ></orders-order-card>
+
+      <!--class="col-12 sm:col-6 md:col-4 xl:col-6"-->
+      <!--class="col-12 mt-5 md:col-6 md:col-offset-3 md:mt-8"-->
+    </div>
 </div>
 
 <div class="d-flex justify-content-center">
